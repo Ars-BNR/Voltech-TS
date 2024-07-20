@@ -1,0 +1,190 @@
+.PersonalPageEquipment {
+    padding-top: 76px;
+    padding-bottom: 76px;
+}
+
+.BackToCatalog {
+    color: #8b8b8b;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 16px;
+    display: block;
+    cursor: pointer;
+}
+
+.EquipmnetBlock {
+    border: 1px solid #ccc;
+    margin-bottom: 48px;
+}
+
+.EquipmentContent {
+    padding: 24px 129px 49px 67px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.EquipmentContent__equipmentImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imgel {
+    max-height: 296px;
+    width: 100%;
+    /* height: 100%; */
+    object-fit: contain;
+}
+
+.EquipmentContent___equipmentInformation {
+    max-width: 459px;
+    flex-grow: 1;
+}
+
+.EquipmentContent__informationTitle {
+    color: #000;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 12px;
+}
+
+.EquipmentContent__priceAndButton {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.price {
+    color: #000;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.button_add {
+    cursor: pointer;
+    background: #2b2b2b;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-left: 24px;
+}
+
+.short_info {
+    /* max-width: 215px; */
+}
+
+.short_info_title {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 16px;
+}
+
+.short_info_el {
+    color: #8d8d8d;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 8px;
+}
+
+.info_el_main {
+    color: #535353;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.info_el_li {
+    margin-bottom: 8px;
+}
+
+.contentWithDecription {
+    display: flex;
+    gap: 200px;
+}
+
+.descriptionBlock {
+    max-width: 486px;
+}
+
+.descriptionBlock__title {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 16px;
+}
+
+.descriptionBlock__text {
+    color: #2b2b2b;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.informationBlock {
+    flex-grow: 1;
+}
+
+.informationBlock__title {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 16px;
+}
+
+.informationBlock__infoEl {
+    color: #8d8d8d;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 8px;
+}
+
+.informationBlock__mainEl {
+    color: #2b2b2b;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.message {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: #04b639;
+    padding: 50px;
+    border: 1px solid #8d8d8d;
+
+    z-index: 1000;
+    text-align: center;
+    font-size: 32px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.message.show {
+    opacity: 1;
+    top: 283px;
+}

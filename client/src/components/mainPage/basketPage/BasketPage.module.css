@@ -1,0 +1,47 @@
+.basketPage {
+    padding-top: 91px;
+}
+
+.backToMainPage {
+    color: #8b8b8b;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 12px;
+    display: block;
+    cursor: pointer;
+}
+
+.titlebasket {
+    color: #000;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 40px;
+}
+
+.basketContent {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    justify-content: space-between;
+    padding-bottom: 90px;
+}
+
+.basketContent__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+}
+
+
+
+.emptyBasket {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 23px;
+    color: #999;
+}

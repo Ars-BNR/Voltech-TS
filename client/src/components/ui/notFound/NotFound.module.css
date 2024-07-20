@@ -1,0 +1,16 @@
+.notFound__Block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.notFoundBlock__el,
+.notFoundBlock__link {
+    font-size: 40px;
+}
+
+.notFoundBlock__link:hover {
+    color: #07bc0c;
+}

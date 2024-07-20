@@ -1,0 +1,19 @@
+.inputBlock {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+
+
+.Block__inp {
+    border-bottom: 2px solid #8b8b8b;
+    width: 100%;
+    padding: 0px 0px 8px 8px;
+    caret-color: 2px #8b8b8b;
+    margin-bottom: 10px;
+}
+
+
+.errorBlock {
+    color: rgb(199, 8, 8);
+}

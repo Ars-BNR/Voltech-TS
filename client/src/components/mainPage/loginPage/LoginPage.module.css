@@ -1,0 +1,52 @@
+.loginPage {
+    max-width: 436px;
+    margin: 0 auto;
+    padding-top: 203px;
+}
+
+.loginBlock {
+    padding: 40px 56px 56px 56px;
+    border: 1px solid #2B2B2B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginBlock__title {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 48px;
+}
+
+.loginBlock__inp {
+    border-bottom: 2px solid #8b8b8b;
+    width: 100%;
+}
+
+.loginBlock__inp:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.loginBlock__inp:last-child {
+    margin-bottom: 48px;
+}
+
+.loginBlock__btnBlack {
+    background: #2B2B2B;
+    color: #fff;
+    padding: 14.5px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.loginBlock__btnBlack:hover {
+    cursor: pointer;
+}
+
+
+.loginBlock__btnWhite {
+    border: 1px solid #2B2B2B;
+    padding: 14.5px;
+    width: 100%;
+}

@@ -1,0 +1,51 @@
+.registerPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.registerBlock {
+    padding: 40px 56px 56px 56px;
+    border: 1px solid #2B2B2B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 436px;
+    flex-grow: 1;
+}
+
+.registerBlock__title {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 48px;
+}
+
+
+
+.registerBlock__btnBlack {
+    background: #2B2B2B;
+    color: #fff;
+    padding: 14.5px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.registerBlock__btnBlack:hover {
+    cursor: pointer;
+}
+
+.registerBlock__btnWhite {
+    border: 1px solid #2B2B2B;
+    padding: 14.5px;
+    width: 100%;
+}
+
+.registerBlock__inp {
+    border-bottom: 2px solid #8b8b8b;
+    width: 100%;
+    padding: 0px 0px 8px 8px;
+    caret-color: 2px #8b8b8b;
+    margin-bottom: 10px;
+}

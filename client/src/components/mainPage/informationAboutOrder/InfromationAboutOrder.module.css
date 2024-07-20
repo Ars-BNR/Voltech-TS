@@ -1,0 +1,160 @@
+.InformationAboutOrder {
+    padding-top: 91px;
+    padding-bottom: 91px;
+}
+
+.BackToOrder {
+    cursor: pointer;
+    color: #8b8b8b;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.titleOrder {
+    color: #000;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 24px;
+}
+
+.orderBlock {
+    border: 1px solid #ccc;
+    max-width: 588px;
+    padding: 32px 64px 40px 32px;
+}
+
+.orderBlock__numberOrder {
+    margin-bottom: 16px;
+    color: #2b2b2b;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.orderBlock__valueOrder {
+    color: #8b8b8b;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.orderBlock__name,
+.orderBlock__surname,
+.orderBlock__phone {
+    color: #2b2b2b;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 12px;
+}
+
+.orderBlock__address {
+    color: #2b2b2b;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 32px;
+}
+
+.orderBlock__value {
+    color: #8b8b8b;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.orderBlock__amountProduct {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 16px;
+}
+
+.orderBlock__productInfo {
+    max-width: 490px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.orderBlock__productInfo:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.orderBlock__productInfo:last-child {
+    margin-bottom: 32px;
+}
+
+.orderBlock__nameProduct {
+    color: #535353;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    max-width: 282px;
+    min-width: 258px;
+}
+
+.orderBlock__quaintityProduct,
+.orderBlock__Shtuki {
+    color: #535353;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.orderBlock__price {
+    color: #2b2b2b;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    min-width: 67px;
+}
+
+.orderBlock__rub {
+    color: #8b8b8b;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+
+
+.orderBlock__tPrice {
+    color: #2b2b2b;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.orderBlock__tValue {
+    color: #2b2b2b;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.orderBlock__trub {
+    color: #8b8b8b;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}

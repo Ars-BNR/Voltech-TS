@@ -1,0 +1,167 @@
+.ordersInfo {
+    padding-top: 91px;
+}
+
+.ordersInfo__back {
+    color: #8b8b8b;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.ordersInfo__title {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 120%;
+    /* 38.4px */
+    margin-bottom: 40px;
+}
+
+.ordersList {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    padding-bottom: 60px;
+}
+
+.ordersItem {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 24px 45px 32px 24px;
+    border: 1px solid #8b8b8b;
+}
+
+.numberOrderBlock {}
+
+.numberOrderBlock__number {
+    margin-bottom: 12px;
+}
+
+.numberOrderBlock__date {
+    color: #535353;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.equipmentOrderBlock__count {
+    margin-bottom: 16px;
+}
+
+.equipmentsList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    max-height: 95px;
+    overflow: hidden;
+}
+
+.equipmentsList__item {
+    display: flex;
+    align-items: flex-start;
+    max-width: 486px;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.equipmentsList__title {
+    /* max-width: 282px; */
+    color: #535353;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 118px;
+    min-width: 117px;
+}
+
+.equipmentsList__count {
+    color: #535353;
+    line-height: 120%;
+}
+
+.equipmentsList__price {
+    color: #2b2b2b;
+    min-width: 73px;
+}
+
+.statusOrderBlock__status {}
+
+.statusOrderBlock__status_StatusProcess {
+    padding: 10px;
+    border: 1px solid #0068b2;
+    color: #0068b2;
+}
+
+.statusOrderBlock__status_StatusPerform {
+    padding: 10px;
+    border: 1px solid #b2a100;
+    color: #b2a100;
+}
+
+.statusOrderBlock__status_StatusDelivery {
+    padding: 10px;
+    border: 1px solid #4fb200;
+    color: #4fb200;
+}
+
+.statusOrderBlock__status_StatusCancel {
+    padding: 10px;
+    border: 1px solid #b22b00;
+    color: #b22b00;
+}
+
+.statusOrderBlock__status_StatusProcess,
+.statusOrderBlock__status_StatusPerform,
+.statusOrderBlock__status_StatusDelivery,
+.statusOrderBlock__status_StatusCancel {
+    min-width: 133px;
+    text-align: center;
+}
+
+.statusOrderBlock__title {
+    margin-bottom: 16px;
+}
+
+.resultOrderBlock__title {
+    margin-bottom: 16px;
+}
+
+.resultOrderBlock__price {
+    color: #2b2b2b;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 16px;
+}
+
+.resultOrderBlock__btn {
+    cursor: pointer;
+    padding: 10px;
+    color: #8b8b8b;
+    border: 1px solid #8b8b8b;
+}
+
+.resultOrderBlock__btn:hover {
+    color: #b22b00;
+    border: 1px solid #b22b00;
+}
+
+.moreOrderBlock__btn {
+    cursor: pointer;
+    padding: 10px;
+    color: #8b8b8b;
+    border: 1px solid #8b8b8b;
+}
+
+.moreOrderBlock__btn:hover {
+    color: #0068b2;
+}
+
+.messageYouNotOrders {
+    color: #8b8b8b;
+    font-size: 20px;
+}

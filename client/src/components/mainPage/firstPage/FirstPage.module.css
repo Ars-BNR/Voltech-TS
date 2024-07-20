@@ -1,0 +1,90 @@
+.leftBlock {
+    padding: 24px 54px 118px 32px;
+    border: 1px solid #cccccc;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.voltechMain {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    gap: 24px;
+}
+
+.title {
+    font-size: 48px;
+    max-width: 298px;
+    line-height: 120%;
+    margin-bottom: 50px;
+}
+
+.rightBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    cursor: pointer;
+}
+
+.topRightBlock {
+    padding: 24px 458px 108px 32px;
+    display: flex;
+    position: relative;
+    border: 1px solid #cccccc;
+    border-radius: 40px;
+}
+
+.leftBlock__img {
+    width: 298px;
+}
+
+.rightBlock__img {
+    position: absolute;
+    left: 300px;
+    top: -200px;
+}
+
+.bottomRightBlock {
+    display: flex;
+    gap: 24px;
+}
+
+.bottomRightBlockLeft {
+    padding: 24px 33px 47px 32px;
+    border: 1px solid #cccccc;
+    border-radius: 40px;
+}
+
+.bottomRightBlockRight {
+    padding: 24px 67px 47px 32px;
+    border: 1px solid #cccccc;
+    border-radius: 40px;
+}
+
+.bottomRightBlockLeft__title {
+    font-size: 48px;
+    max-width: 298px;
+    line-height: 120%;
+    margin-bottom: 20px;
+}
+
+.bottomRightBlockRight__title {
+    font-size: 48px;
+    max-width: 298px;
+    line-height: 120%;
+    margin-bottom: 32px;
+}
+
+.bottomRightBlockLeft__picture {
+    width: 421px;
+}
+
+.bottomRightBlockRight__picture {
+    width: 218px;
+}
+
+.bottomRightBlockLeft__img,
+.bottomRightBlockRight__img {
+    margin: 0 auto;
+    display: block;
+}

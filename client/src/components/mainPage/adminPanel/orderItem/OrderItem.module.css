@@ -1,0 +1,273 @@
+.adminPanel {
+    padding-top: 91px;
+}
+
+.adminInfo__back {
+    color: #8b8b8b;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.adminInfo__title {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 120%;
+    /* 38.4px */
+    margin-bottom: 40px;
+}
+
+.ordersItem {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 24px 45px 32px 24px;
+    border: 1px solid #8b8b8b;
+}
+
+.numberOrderBlock {}
+
+.numberOrderBlock__number {
+    margin-bottom: 12px;
+}
+
+.numberOrderBlock__date {
+    color: #535353;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.equipmentOrderBlock__count {
+    margin-bottom: 16px;
+}
+
+.equipmentsList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 101px;
+    overflow: hidden;
+}
+
+.ordersList {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    padding-bottom: 60px;
+    align-items: flex-start;
+}
+
+.equipmentsList__item {
+    display: flex;
+    /* align-items: flex-start; */
+    max-width: 486px;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.equipmentsList__title {
+    /* max-width: 282px; */
+    color: #535353;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 118px;
+    min-width: 117px;
+}
+
+.equipmentsList__count {
+    color: #535353;
+    line-height: 120%;
+}
+
+.equipmentsList__price {
+    color: #2b2b2b;
+    min-width: 73px;
+}
+
+.statusOrderBlock {
+    flex-grow: 1;
+    max-width: 162px;
+}
+
+.statusOrderBlock__status {}
+
+.statusOrderBlockStatus {
+    align-items: center;
+    position: relative;
+}
+
+.statusOrderBlockStatusHeader {
+    display: flex;
+    justify-content: space-between;
+    max-width: 162px;
+    padding: 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.statusOrderBlockStatusBody {
+    width: 100%;
+    position: absolute;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.statusOrderBlockStatusBodyItem {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* PROCESS */
+.statusOrderBlockStatusHeader_process {
+    border: 1px solid #0068b2;
+    color: #0068b2;
+}
+
+.statusOrderBlockStatusBody_process {
+    border: 1px solid #0068b2;
+    border-top: none;
+    color: #0068b2;
+}
+
+.statusOrderBlockStatus_process {
+    color: #0068b2;
+}
+
+.statusOrderBlockStatus__arrow_process {
+    fill: #0068b2;
+}
+
+/* PERFORM */
+.statusOrderBlockStatusHeader_perform {
+    border: 1px solid #b2a100;
+    color: #b2a100;
+}
+
+.statusOrderBlockStatusBody_perform {
+    border: 1px solid #b2a100;
+    border-top: none;
+    color: #b2a100;
+}
+
+.statusOrderBlockStatus_perform {
+    color: #b2a100;
+}
+
+.statusOrderBlockStatus__arrow_perform {
+    fill: #b2a100;
+}
+
+/* DELIVERY */
+.statusOrderBlockStatusHeader_delivery {
+    border: 1px solid #4fb200;
+    color: #4fb200;
+}
+
+.statusOrderBlockStatusBody_delivery {
+    border: 1px solid #4fb200;
+    border-top: none;
+    color: #4fb200;
+}
+
+.statusOrderBlockStatus_delivery {
+    color: #4fb200;
+}
+
+.statusOrderBlockStatus__arrow_delivery {
+    fill: #4fb200;
+}
+
+/* CANCEL */
+.statusOrderBlockStatusHeader_cancel {
+    border: 1px solid #b22b00;
+    color: #b22b00;
+}
+
+.statusOrderBlockStatusBody_cancel {
+    border: 1px solid #b22b00;
+    border-top: none;
+    color: #b22b00;
+}
+
+.statusOrderBlockStatus_cancel {
+    color: #b22b00;
+}
+
+.statusOrderBlockStatus__arrow_cancel {
+    fill: #b22b00;
+}
+
+/* .statusOrderBlock__status_StatusPerform {
+      padding: 10px;
+      border: 1px solid #b2a100;
+      color: #b2a100;
+    }
+    .statusOrderBlock__status_StatusDelivery {
+      padding: 10px;
+      border: 1px solid #4fb200;
+      color: #4fb200;
+    }
+    .statusOrderBlock__status_StatusCancel {
+      padding: 10px;
+      border: 1px solid #b22b00;
+      color: #b22b00;
+    } */
+.statusOrderBlock__title {
+    margin-bottom: 16px;
+}
+
+.resultOrderBlock__title {
+    margin-bottom: 16px;
+}
+
+.resultOrderBlock__price {
+    color: #2b2b2b;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 120%;
+    /* 38.4px */
+    margin-bottom: 16px;
+}
+
+.resultOrderBlock__btn {
+    padding: 10px;
+    color: #8b8b8b;
+    border: 1px solid #8b8b8b;
+    cursor: pointer;
+}
+
+.resultOrderBlock__btn:hover {
+    color: #b22b00;
+    border: 1px solid #b22b00;
+}
+
+.active {
+    transform: rotate(180deg);
+}
+
+.arrow {
+    transition: all 0.3s ease-in-out;
+}
+
+.moreOrderBlock__btn {
+    cursor: pointer;
+    padding: 10px;
+    color: #8b8b8b;
+    border: 1px solid #8b8b8b;
+}
+
+.moreOrderBlock__btn:hover {
+    color: #0068b2;
+}

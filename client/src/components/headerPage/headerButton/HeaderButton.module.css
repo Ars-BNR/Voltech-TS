@@ -1,0 +1,10 @@
+.headerButton {
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+
+}
+
+.headerButton__link {
+    color: #000;
+}

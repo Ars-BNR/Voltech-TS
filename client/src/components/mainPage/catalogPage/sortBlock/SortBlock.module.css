@@ -1,0 +1,27 @@
+.sortBlock {
+    max-width: 282px;
+    padding: 24px 50px 90px 32px;
+    border: 1px solid #cccccc;
+    align-self: flex-start;
+}
+
+.sortBlock__title {
+    font-size: 32px;
+    line-height: 120%;
+    margin-bottom: 32px;
+}
+
+.priceBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.priceBlock__inp {
+    max-width: 80px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 4px 8px 4px 8px;
+    font-size: 14px;
+}

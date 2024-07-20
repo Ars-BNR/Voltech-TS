@@ -1,0 +1,20 @@
+.header__container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.voltechHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    position: relative;
+    border-bottom: 1px solid #cecece;
+    z-index: 99;
+}
+
+.voltechHeader__title {
+    font-size: 24px;
+    color: #000;
+}
