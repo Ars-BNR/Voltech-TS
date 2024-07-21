@@ -63,7 +63,7 @@ const CardEquipment: FC<CardEquipmentProps> = ({
   }, [count]);
   return (
     <div className={classes.basketBlock}>
-      <Link to={`/personalPageEquipment/${elbasketData.id}`}>
+      <Link to={`/personalPageEquipment/${elbasketData.id_equipment}`}>
         <div className={classes.basketBlock__equipImg}>
           <img
             className={classes.equipImg}

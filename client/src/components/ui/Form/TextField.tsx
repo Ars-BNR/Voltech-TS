@@ -20,11 +20,6 @@ const TextField = ({
   customClass,
   customBlockClass,
 }: TextFieldProps) => {
-  console.log("Рендер TextField", name);
-
-  // const handleChange = ({ target }: { target: HTMLInputElement }) => {
-  //   onChange({ name: target.name, value: target.value });
-  // };
   return (
     <div className={customBlockClass ? customBlockClass : classes.inputBlock}>
       <input

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext, FC } from "react";
 import classes from "./CatalogPage.module.css";
-// import { Link, useParams, useSearchParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -32,11 +31,7 @@ const CatalogPage: FC = () => {
     fetchProducts();
   }, [selectedBrands, selectedCategory]);
 
-  // useEffect(() => {
-  //     console.log('Выбранный бренд', selectedBrands);
-  // }, [selectedBrands]);
   const fetchProducts = async (min?: number, max?: number) => {
-    // console.log('priceRange', priceRange)
     let params: { category?: string | null; price?: string; brand?: string } = {
       category: selectedCategory,
     };
@@ -79,7 +74,10 @@ const CatalogPage: FC = () => {
       console.error("Failed to fetch products:", error);
     }
   };
-  const handlePriceInputChange = (min: number, max: number) => {
+  const handlePriceInputChange = (
+    min: number | string,
+    max: number | string
+  ) => {
     min = convertStringToNumber(min);
 
     max = convertStringToNumber(max);
@@ -87,8 +85,8 @@ const CatalogPage: FC = () => {
   };
   const handleOnKeyDownChange = (
     event: React.KeyboardEvent,
-    min: number,
-    max: number
+    min: number | string,
+    max: number | string
   ) => {
     if (event.key === "Enter") {
       min = convertStringToNumber(min);
@@ -125,7 +123,6 @@ const CatalogPage: FC = () => {
       setSelectedBrands((prevSelectedBrands) =>
         prevSelectedBrands.filter((brand) => brand !== value)
       );
-      console.log("Удаленный бренд", selectedBrands);
     }
   };
   const HandleAddBasket = async (id_equipment: number) => {
@@ -134,17 +131,16 @@ const CatalogPage: FC = () => {
       toast.info(
         "Чтобы добавить товар в корзину, вам необходимо зарегистрироваться."
       );
-      navigate("/register");
+      navigate("/registration");
       return;
     }
     try {
-      const idUsers = store.profile.id;
-      const response = await basketService.post({
+      const idUsers = store?.profile?.id;
+      await basketService.post({
         id_equipment: id_equipment,
         id_user: idUsers,
         count: 1,
       });
-      console.log("товар", response);
       toast.success("Товар добавлен в корзину");
     } catch (error) {
       console.log(error);

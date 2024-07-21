@@ -9,8 +9,6 @@ import HeaderButton from "./headerButton/HeaderButton";
 
 const HeaderPage: FC = () => {
   const { store } = useContext(Context);
-  // console.log("status isAuth", store.isAuth);
-
   return (
     <div className={classes.header}>
       <div className={classes.header__container}>

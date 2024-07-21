@@ -32,7 +32,7 @@ const MakingOrder = () => {
   });
   const handleShowBasket = async () => {
     try {
-      const idUsers = store.profile.id;
+      const idUsers = store?.profile?.id;
       if (!idUsers) {
         console.error("ID пользователя не найден");
         return;
@@ -40,7 +40,6 @@ const MakingOrder = () => {
       if (order.price !== 0 && order.allCount !== 0) {
         const response = idUsers && (await basketService.get(idUsers));
         const ordersData = response;
-        console.log("ordersData", ordersData);
         Setorder((prevOrder) => ({ ...prevOrder, info: ordersData }));
       } else {
         toast.error("Не делай вид что ты обманул систему");
@@ -59,7 +58,6 @@ const MakingOrder = () => {
         await basketService.clearbasket(idUsers);
         localStorage.removeItem("TotalQuantity");
         localStorage.removeItem("totalPrice");
-        console.log("Корзина очищена");
       }
     } catch (error) {
       console.error("Ошибка при очистке корзины", error);

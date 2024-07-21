@@ -26,17 +26,7 @@ const OrderItem: FC<OrderItemProps> = ({
   const options = ["Обработка", "Выполняется", "Доставлено", "Отмена"];
   const itemRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //     // console.log(itemRef.current.scrollHeight);
-  // }, [itemRef.current.scrollHeight]);
-  // useEffect(() => {
-  //     console.log('OrderItem re-rendered');
-  //     console.log('Текущее состояние', selected);
-  // }, [selected]);
-  console.log(orderInfo);
-
   const handleClass = () => {
-    console.log("выбранный статус", selected);
     switch (selected) {
       case "Обработка":
         return "_process";
@@ -58,7 +48,6 @@ const OrderItem: FC<OrderItemProps> = ({
         newStatus,
       });
       setSelected(newStatus);
-      console.log("newStatus", newStatus);
       const updatedOrders = allOrders.map((order) =>
         order.id_order === id_order ? { ...order, status: newStatus } : order
       );
@@ -249,4 +238,3 @@ const OrderItem: FC<OrderItemProps> = ({
 };
 
 export default OrderItem;
-// export default React.memo(OrderItem);

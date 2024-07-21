@@ -46,11 +46,10 @@ const OrdersInfo = () => {
 
   const hadleInfoOrder = async () => {
     try {
-      const idUsers = store.profile.id;
+      const idUsers = store?.profile?.id;
       const response = idUsers && (await orderService.get(idUsers));
       const OtherData = response;
       Setotherdata(OtherData);
-      console.log("OtherData", OtherData);
     } catch (error) {
       console.error(error);
     }

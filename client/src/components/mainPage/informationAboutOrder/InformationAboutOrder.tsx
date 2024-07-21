@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import classes from "./InfromationAboutOrder.module.css";
 import { useNavigate } from "react-router-dom";
@@ -10,14 +9,12 @@ const InformationAboutOrder = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  // const location = useLocation();
   const [orderData, setOrderData] = useState<InfoOrder | null>(null);
 
   const fetchOrderData = async () => {
     if (id) {
       try {
         const response = await orderService.getInfoOrder(id);
-        console.log("fetchOrderData", response);
         setOrderData(response);
       } catch (error) {
         console.error("Ошибка при получении данных о заказе:", error);

@@ -20,7 +20,6 @@ const PersonalPageEquipment = () => {
     const response = id && (await catalogService.getInfoEquipment(Number(id)));
     const personalData = response;
     setEquipment(personalData);
-    // console.log(personalData);
   };
 
   const HandleAddBasket = async (id_equipment: number) => {
@@ -29,20 +28,19 @@ const PersonalPageEquipment = () => {
       toast.info(
         "Чтобы добавить товар в корзину, вам необходимо зарегистрироваться."
       );
-      navigate("/register");
+      navigate("/registration");
       return;
     }
     try {
-      const idUsers = store.profile.id;
-      const response = await basketService.post({
+      const idUsers = store?.profile?.id;
+      await basketService.post({
         id_equipment: id_equipment,
         id_user: idUsers,
         count: 1,
       });
-      // console.log(response);
       toast.success("Товар добавлен в корзину");
     } catch (error) {
-      // console.log(error);
+      console.log(error);
     }
   };
   useEffect(() => {

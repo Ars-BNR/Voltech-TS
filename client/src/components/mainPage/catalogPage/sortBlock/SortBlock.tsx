@@ -21,10 +21,10 @@ interface SortBlockProps {
   selectedBrands: string[];
   handleOnKeyDownChange: (
     event: React.KeyboardEvent,
-    min: number,
-    max: number
+    min: number | string,
+    max: number | string
   ) => void;
-  handlePriceInputChange: (min: number, max: number) => void;
+  handlePriceInputChange: (min: number | string, max: number | string) => void;
   handleSliderPriceChange: (range: number[]) => void;
   fetchProducts: () => void;
 }
@@ -40,7 +40,6 @@ const SortBlock: FC<SortBlockProps> = ({
   handleSliderPriceChange,
   fetchProducts,
 }) => {
-  // console.log("SortBlockISCall");
   return (
     <div className={classes.sortBlock}>
       <p className={classes.sortBlock__title}>Сортировка</p>
@@ -68,12 +67,12 @@ const SortBlock: FC<SortBlockProps> = ({
                 min={minPrice}
                 value={priceRange[0]?.toLocaleString("ru-RU") || ""}
                 onChange={(e) =>
-                  handlePriceInputChange(Number(e.target.value), priceRange[1])
+                  handlePriceInputChange(e.target.value, priceRange[1])
                 }
                 onKeyDown={(e) =>
                   handleOnKeyDownChange(
                     e,
-                    Number((e.target as HTMLInputElement).value),
+                    (e.target as HTMLInputElement).value,
                     priceRange[1]
                   )
                 }
@@ -90,13 +89,13 @@ const SortBlock: FC<SortBlockProps> = ({
                   ""
                 }
                 onChange={(e) =>
-                  handlePriceInputChange(priceRange[0], Number(e.target.value))
+                  handlePriceInputChange(priceRange[0], e.target.value)
                 }
                 onKeyDown={(e) =>
                   handleOnKeyDownChange(
                     e,
                     priceRange[0],
-                    Number((e.target as HTMLInputElement).value)
+                    (e.target as HTMLInputElement).value
                   )
                 }
               />

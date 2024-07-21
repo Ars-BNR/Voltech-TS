@@ -17,14 +17,12 @@ const HeaderProfile: FC = () => {
 
   const handleLogout = async () => {
     try {
-      await store.logout();
-      navigate("/login");
+      await store.logout(navigate);
     } catch (error) {
-      // console.log(error);
+      console.log(error);
     }
   };
   const username = store.profile?.login;
-  // console.log(username, "username");
   return (
     <div className={classes.headerProfile}>
       <div className={classes.trashBlock}>

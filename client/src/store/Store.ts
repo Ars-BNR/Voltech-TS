@@ -4,6 +4,7 @@ import registerService from "../services/register-service";
 import exitService from "../services/exit-service";
 import refreshService from "../services/refresh-service";
 import { toast } from "react-toastify";
+import { NavigateFunction } from "react-router-dom";
 interface Profile {
   id?: number;
   login?: string;
@@ -28,39 +29,42 @@ export default class Store {
   setLoading(bool: boolean) {
     this.isLoading = bool;
   }
-  async login(login: string, password: string) {
+  async login(login: string, password: string, navigate: NavigateFunction) {
     try {
       const response = await loginService.login(login, password);
-      // console.log("Login_Data", response);
       localStorage.setItem("token", response.accessToken);
       this.SetAuth(true);
       this.setProfiles(response.profiles);
+      navigate("/", { replace: true });
     } catch (error: any) {
-      console.log(error.response?.data?.message);
-      toast.error(error.response.data.message);
+      toast.error(error.response?.data?.message);
     }
   }
-  async registration(login: string, password: string) {
+  async registration(
+    login: string,
+    password: string,
+    navigate: NavigateFunction
+  ) {
     try {
       const response = await registerService.registration(login, password);
-      // console.log("Reg_Data", response);
       localStorage.setItem("token", response.accessToken);
       this.SetAuth(true);
       this.setProfiles(response.profiles);
+      navigate("/", { replace: true });
     } catch (error: any) {
-      console.log(error.response?.data?.message);
+      toast.error(error.response?.data?.message);
     }
   }
-  async logout() {
+  async logout(navigate: NavigateFunction) {
     try {
-      const response = await exitService.logout();
-      console.log("LOgout_Data", response);
+      await exitService.logout();
       localStorage.removeItem("token");
       this.SetAuth(false);
       this.setProfiles({});
+      navigate("/login", { replace: true });
     } catch (error: any) {
       console.log(error);
-      console.log(error.response?.data?.message);
+      toast.error(error.response?.data?.message);
     }
   }
   async checkAuth() {
@@ -68,7 +72,6 @@ export default class Store {
     try {
       const response = await refreshService.refresh();
       runInAction(() => {
-        // console.log("responseChechAuth", response);
         localStorage.setItem("token", response.accessToken);
         this.SetAuth(true);
         this.setProfiles(response.profiles);

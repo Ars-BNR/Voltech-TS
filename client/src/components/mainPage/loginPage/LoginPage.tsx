@@ -1,14 +1,14 @@
-import { FC, FormEvent, useCallback, useState } from "react";
+import { FC, FormEvent, useCallback, useEffect, useState } from "react";
 import classes from "./LoginPage.module.css";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TextField from "../../ui/Form/TextField";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../../main";
 import { Errors } from "../../../types/type";
+import * as yup from "yup";
+
 const LoginPage: FC = () => {
   const navigate = useNavigate();
   const [data, setData] = useState({
@@ -17,36 +17,35 @@ const LoginPage: FC = () => {
   });
   const { store } = useContext(Context);
   const [errors, setErrors] = useState({} as Errors);
+
+  const validateScheme = yup.object().shape({
+    password: yup.string().required("Пароль обязателен для заполнения"),
+    login: yup.string().required("Логин обязателен для заполнения"),
+  });
+
+  const validate = useCallback(async () => {
+    try {
+      await validateScheme.validate(data);
+      setErrors({});
+      return true;
+    } catch (err: any) {
+      setErrors({ [err.path]: err.message });
+      return false;
+    }
+  }, [data]);
+
+  useEffect(() => {
+    validate();
+  }, [data]);
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      await store.login(data.login, data.password);
-      if (!store.isLoading) {
-        if (store.isAuth) {
-          navigate("/");
-        }
-      }
+      await store.login(data.login, data.password, navigate);
     } catch (error: any) {
-      if (
-        error.response &&
-        error.response.data.message.includes("Неверный пароль")
-      ) {
-        toast.error(error.response.data.message);
-        setErrors({ login: error.response.data.message });
-      }
-      if (error.response && error.response.status === 401) {
-        toast.error("Пользователь с таким логином и паролем не найден");
-      } else {
-        console.error("Error adding key to database:", error);
-      }
+      console.log(error);
     }
   };
-  // const handleChange = useCallback((target) => {
-  //     setData((prevState) => ({
-  //         ...prevState,
-  //         [target.name]: target.value,
-  //     }));
-  // }, []);
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const { name, value } = event.target;

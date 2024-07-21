@@ -4,12 +4,10 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useRef,
   useState,
 } from "react";
 import classes from "./RegisterPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as yup from "yup";
 import { observer } from "mobx-react-lite";
@@ -27,21 +25,8 @@ const RegisterPage: FC = () => {
     confirmPassword: "",
   } as Data);
 
-  const withOutCallback = useRef(0);
-
-  const withCallback = useRef(0);
-
   const [errors, setErrors] = useState({} as Errors);
 
-  //   const handleChange = useCallback(
-  //     (target: React.ChangeEvent<HTMLInputElement>) => {
-  //       setData((prevState) => ({
-  //         ...prevState,
-  //         [target.name]: target.value,
-  //       }));
-  //     },
-  //     []
-  //   );
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const { name, value } = event.target;
@@ -52,23 +37,6 @@ const RegisterPage: FC = () => {
     },
     []
   );
-
-  //   const validateWithOutCallback = (data) => {
-  //     // console.log('datavalidateWithOutCallback', data);
-  //   };
-  //   const validateWithCallback = useCallback((data) => {
-  //     // console.log('datavalidateWithCallback', data);
-  //   }, []);
-  //   useEffect(() => {
-  //     validateWithOutCallback(data);
-  //     validateWithCallback(data);
-  //   }, [data]);
-  //   useEffect(() => {
-  //     withOutCallback.current++;
-  //   }, [validateWithOutCallback]);
-  //   useEffect(() => {
-  //     withCallback.current++;
-  //   }, [validateWithCallback]);
 
   const validateScheme = yup.object().shape({
     confirmPassword: yup
@@ -112,9 +80,6 @@ const RegisterPage: FC = () => {
 
   useEffect(() => {
     validate();
-    // console.log(Object.keys(errors).length, "lenth errors");
-    // console.log(Object.keys(errors).length == 0, "Equal");
-    // console.log(errors);
   }, [data]);
 
   const isValid = Object.keys(errors).length == 0;
@@ -125,28 +90,15 @@ const RegisterPage: FC = () => {
 
     if (!isValid) return;
     try {
-      await store.registration(data.login, data.password);
-      navigate("/");
+      await store.registration(data.login, data.password, navigate);
     } catch (error: any) {
-      // console.log(error);
-      if (
-        error.response &&
-        error.response.data.message.includes("Пользователь с логином ")
-      ) {
-        toast.error(error.response.data.message);
-        setErrors({ login: error.response.data.message });
-      } else {
-        // console.error("Error adding key to database:", error);
-        toast.error("Произошла ошибка при регистрации");
-      }
+      console.log(error);
     }
   };
   return (
     <div className={classes.registerPage}>
       <form onSubmit={handleSubmit} className={classes.registerBlock}>
         <p className={classes.registerBlock__title}>Регистрация</p>
-        <p>Render withOutCallback {withOutCallback.current}</p>
-        <p>Render withCallback {withCallback.current}</p>
         <TextField
           type="text"
           name="login"
