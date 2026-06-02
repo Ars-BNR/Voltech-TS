@@ -10,6 +10,3 @@ yarn dev
 cd s*
 yarn 
 yarn dev
-
-3.123test_For
-
