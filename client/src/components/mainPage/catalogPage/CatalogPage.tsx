@@ -27,6 +27,7 @@ const CatalogPage: FC = () => {
   const [noProductsFound, setNoProductsFound] = useState<boolean>(false);
   const [maxPrice, setMaxPrice] = useState<number>();
   const [minPrice, setMinPrice] = useState<number>();
+
   useEffect(() => {
     fetchProducts();
   }, [selectedBrands, selectedCategory]);
@@ -35,6 +36,7 @@ const CatalogPage: FC = () => {
     let params: { category?: string | null; price?: string; brand?: string } = {
       category: selectedCategory,
     };
+
     if (min && max) {
       params.price = [min, max].join("-");
     } else {
@@ -42,9 +44,11 @@ const CatalogPage: FC = () => {
         params.price = priceRange.join("-");
       }
     }
+
     if (selectedBrands && selectedBrands.length > 0) {
       params.brand = selectedBrands.join(",");
     }
+    
     try {
       const productsData = await catalogService.get(params);
       setProducts(productsData);
@@ -74,6 +78,7 @@ const CatalogPage: FC = () => {
       console.error("Failed to fetch products:", error);
     }
   };
+
   const handlePriceInputChange = (
     min: number | string,
     max: number | string
@@ -83,6 +88,7 @@ const CatalogPage: FC = () => {
     max = convertStringToNumber(max);
     setPriceRange([min, max]);
   };
+
   const handleOnKeyDownChange = (
     event: React.KeyboardEvent,
     min: number | string,
@@ -112,9 +118,11 @@ const CatalogPage: FC = () => {
       }
     }
   };
+  
   const handleSliderPriceChange = (range: number[]) => {
     setPriceRange(range);
   };
+  
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
     if (checked) {
@@ -125,6 +133,7 @@ const CatalogPage: FC = () => {
       );
     }
   };
+  
   const HandleAddBasket = async (id_equipment: number) => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -146,6 +155,7 @@ const CatalogPage: FC = () => {
       console.log(error);
     }
   };
+
   return (
     products && (
       <div className={classes.catalogPage}>

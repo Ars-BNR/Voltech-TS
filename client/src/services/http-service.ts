@@ -18,17 +18,17 @@ $api.interceptors.response.use(
     return config;
   },
   async (error) => {
-    const orifinalRequest = error.config;
+    const originalRequest = error.config;
     if (
       error.response.status == 401 &&
       error.config &&
       !error.config._isRetry
     ) {
-      orifinalRequest._isRetry = true;
+      originalRequest._isRetry = true;
       try {
         const response = await refreshService.refresh();
         localStorage.setItem("token", response.accessToken);
-        return $api.request(orifinalRequest);
+        return $api.request(originalRequest);
       } catch (error) {
         console.log(error);
       }

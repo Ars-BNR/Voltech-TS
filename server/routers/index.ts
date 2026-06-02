@@ -16,8 +16,10 @@ router.post(
   body("password").isLength({ min: 3, max: 32 }),
   ProfilesController.registration
 );
+
 router.post("/login", ProfilesController.login);
 router.post("/logout", ProfilesController.logout);
+
 router.post("/insertbasket", BasketController.insertBasket);
 router.post("/insertorders", OrderController.insertOrders);
 router.post("/createEquipment", CatalogController.createItem);

@@ -5,6 +5,7 @@ import exitService from "../services/exit-service";
 import refreshService from "../services/refresh-service";
 import { toast } from "react-toastify";
 import { NavigateFunction } from "react-router-dom";
+
 interface Profile {
   id?: number;
   login?: string;
@@ -23,12 +24,15 @@ export default class Store {
   SetAuth(bool: boolean) {
     this.isAuth = bool;
   }
+
   setProfiles(profile: Profile) {
     this.profile = profile;
   }
+
   setLoading(bool: boolean) {
     this.isLoading = bool;
   }
+
   async login(login: string, password: string, navigate: NavigateFunction) {
     try {
       const response = await loginService.login(login, password);
@@ -40,6 +44,7 @@ export default class Store {
       toast.error(error.response?.data?.message);
     }
   }
+
   async registration(
     login: string,
     password: string,
@@ -55,6 +60,7 @@ export default class Store {
       toast.error(error.response?.data?.message);
     }
   }
+
   async logout(navigate: NavigateFunction) {
     try {
       await exitService.logout();
@@ -84,4 +90,5 @@ export default class Store {
       });
     }
   }
+  
 }

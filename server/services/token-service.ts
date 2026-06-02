@@ -10,6 +10,7 @@ class TokenService {
     this.JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET!;
     this.JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET!;
   }
+
   generateTokens = (
     payload: any
   ): { accessToken: string; refreshToken: string } => {
@@ -24,6 +25,7 @@ class TokenService {
       refreshToken,
     };
   };
+
   validateAccessToken(token: string) {
     try {
       const profileData = jwt.verify(token, this.JWT_ACCESS_SECRET);
@@ -32,6 +34,7 @@ class TokenService {
       return null;
     }
   }
+
   validateRefreshToken(token: string) {
     try {
       const profileData = jwt.verify(token, this.JWT_REFRESH_SECRET);
@@ -40,6 +43,7 @@ class TokenService {
       return null;
     }
   }
+  
   async saveToken(userId: number, refreshToken: string) {
     const tokenData = await TokenModel.findOne({
       where: { user: userId },
@@ -69,5 +73,6 @@ class TokenService {
     });
     return tokenData;
   }
+  
 }
 export default new TokenService();

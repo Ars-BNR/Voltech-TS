@@ -1,12 +1,12 @@
 import $api from "./http-service";
 
-const registerEndpoint = "/users";
+const profileEndpoint = "/users";
 
-const registerService = {
+const profileService = {
   getUsers: async () => {
-    const { data } = await $api.get(registerEndpoint);
+    const { data } = await $api.get(profileEndpoint);
     return data;
   },
 };
 
-export default registerService;
+export default profileService;

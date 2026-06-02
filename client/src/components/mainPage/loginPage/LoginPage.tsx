@@ -46,6 +46,7 @@ const LoginPage: FC = () => {
       console.log(error);
     }
   };
+  
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const { name, value } = event.target;
@@ -56,6 +57,7 @@ const LoginPage: FC = () => {
     },
     []
   );
+
   return (
     <div className={classes.loginPage}>
       <form onSubmit={handleSubmit} className={classes.loginBlock}>

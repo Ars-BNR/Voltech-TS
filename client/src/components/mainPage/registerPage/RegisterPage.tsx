@@ -95,6 +95,7 @@ const RegisterPage: FC = () => {
       console.log(error);
     }
   };
+  
   return (
     <div className={classes.registerPage}>
       <form onSubmit={handleSubmit} className={classes.registerBlock}>

@@ -2,11 +2,13 @@ import { Op } from "sequelize";
 import { EquipmentsModel } from "../models";
 import FileService from "./File-service";
 import { UploadedFile } from "express-fileupload";
+
 type QueryParams = {
   category?: string;
   price?: string;
   brand?: string;
 };
+
 type Equipment = {
   type_equip: string;
   price: number;
@@ -14,6 +16,7 @@ type Equipment = {
   main_info: string;
   description: string;
 };
+
 class CatalogService {
   async getAllEquipments(query: QueryParams) {
     let where: any = {};
@@ -49,7 +52,6 @@ class CatalogService {
   }
 
   async createItem(equipment: Equipment, pathimg: UploadedFile) {
-    console.log("equipment", equipment);
     const fileName = await FileService.saveFile(pathimg);
     let { type_equip, price, short_info, main_info, description } = equipment;
     short_info = JSON.parse(short_info);
@@ -65,5 +67,6 @@ class CatalogService {
     });
     return createdEquip;
   }
+  
 }
 export default new CatalogService();

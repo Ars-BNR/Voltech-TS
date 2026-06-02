@@ -27,9 +27,11 @@ function App() {
     <>
       <ChakraProvider resetCSS={false}>
         <Routes>
+
           <Route element={<PrivateRoute role="admin" />}>
             <Route path="adminPanel" element={<AdminPanel />} />
           </Route>
+
           <Route path="/" element={<Page />}>
             <Route index element={<FirstPage />} />
             {routesList.map((route) => (
@@ -41,8 +43,11 @@ function App() {
             ))}
             <Route path="*" element={<NotFound />} />
           </Route>
+
         </Routes>
+
         <ToastContainer position="top-center" autoClose={3000} />
+        
       </ChakraProvider>
     </>
   );

@@ -9,7 +9,7 @@ import errorMiddleware from "./middlewares/error-middleware";
 import { initializeData } from "./db";
 import router from "./routers/index";
 
-const PORT = process.env.PORT || 9375;
+const PORT = process.env.PORT;
 
 const app = express();
 

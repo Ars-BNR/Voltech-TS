@@ -24,9 +24,11 @@ const AdminPanel: FC = () => {
       console.log(error);
     }
   };
+  
   useEffect(() => {
     hadleallInfoOrder();
   }, []);
+
   if (!store.isLoading) {
     if (store.isAuth) {
       return (

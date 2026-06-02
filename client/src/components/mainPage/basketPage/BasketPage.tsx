@@ -37,7 +37,6 @@ const BasketPage: FC = () => {
     }
   }, []);
   useEffect(() => {
-    console.log("первичная загрузка");
     handleShowBasket();
   }, []);
   useEffect(() => {

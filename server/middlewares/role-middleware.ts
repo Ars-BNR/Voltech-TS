@@ -12,16 +12,14 @@ export default function (roleRequired: string) {
         return res.status(403).json({ message: "Пользователь не авторизован" });
       }
       const token = authHeader.split(" ")[1];
-      console.log(token);
       if (!token) {
-        return res.status(403).json({ message: "Пользователь не авторизован" });
+        return res.status(401).json({ message: "Пользователь не авторизован" });
       }
       const secret = process.env.JWT_ACCESS_SECRET;
       if (!secret) {
         throw new Error("JWT_ACCESS_SECRET is not defined");
       }
       const { role } = jwt.verify(token, secret) as { role: string };
-      console.log(role);
       if (role == roleRequired) {
         next();
       } else {

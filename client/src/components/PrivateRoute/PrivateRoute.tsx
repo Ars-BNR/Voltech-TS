@@ -7,6 +7,7 @@ import Page from "../Page";
 import HeaderPage from "../headerPage/HeaderPage";
 import FooterPage from "../footerPage/FooterPage";
 import cl from "../Page.module.css";
+
 interface PrivateRouteProps {
   role: string;
 }

@@ -32,7 +32,7 @@ class ProfilesService {
     }
     const isPassEquals = await bcrypt.compare(password, profiles.password);
     if (!isPassEquals) {
-      throw ApiError.BadRequest("Неверный пароль");
+      throw ApiError.BadRequest("Неверный логин или пароль");
     }
     const profilesDto = new ProfilesDto(profiles);
 

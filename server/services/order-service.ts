@@ -92,9 +92,6 @@ class OrderService {
     if (!id) {
       throw ApiError.BadRequest("Не указан id заказа");
     }
-    if (typeof id === "string") {
-      console.log("id строки");
-    }
     const order = await OrdersModel.findOne({ where: { id_order: id } });
     if (!order) throw new Error("Заказ не найден");
     return order;
